@@ -150,7 +150,7 @@ footer {
 /* For Socials */
 
 .social-logo {
-    width: 150px;
+    width: 90px;
     height: auto;
     vertical-align: middle;
     transition: transform 0.3s;
@@ -161,7 +161,7 @@ footer {
 }
 
 .social-icons {
-    display: inline;
+    display: inline-flex;
     gap: 1rem;
 }
 
