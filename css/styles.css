@@ -147,6 +147,29 @@ footer {
     margin-left: 60px; /* Adjust based on logo width to align with the text */
 }
 
+/* For Socials */
+
+.social-logo {
+    width: 150px;
+    height: auto;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-icons {
+    display: inline;
+    gap: 1rem;
+}
+
+.social-logo:hover {
+    transform: scale(1.1);
+}
+
+
 button {
     margin-left: auto;
     padding: 0.5rem 1rem;
