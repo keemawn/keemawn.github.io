@@ -39,6 +39,7 @@
                             <h2>Bosch</h2>
                         </div>
                         <h3>Machine Learning and Sustainability Research Engineer Intern</h3>
+                        <h5>Duration: Jan 2024 to May 2024</h5>
                         <p>Project description.</p>
                     </div>
                     <!-- Repeat for more projects -->
@@ -48,6 +49,7 @@
                             <h2>Edwards Lifesciences</h2>
                         </div>
                         <h3>Digitalisation Intern</h3>
+                        <h5>Duration: Jul 2023 to Dec 2023</h5>
                         <p>Project description.</p>
                     </div>
                     <div class="work_experiences">
@@ -56,14 +58,17 @@
                             <h2>AsiaGMP</h2>
                         </div>
                         <h3>Writer and Administration Assistant</h3>
+                        <h5>Duration: May 2023 to Jun 2023</h5>
                         <p>Project description.</p>
                     </div>
                     <div class="work_experiences">
                         <div class="company">
                             <img src="images/samsung.png" alt="Samsung Logo" class="company-logo">
                             <h2>Samsung Electronics</h2>
+                            
                         </div>
                         <h3 style = margin-top:0.75rem>Galaxy Specialist</h3>
+                        <h5>Duration: May 2022 to Jun 2023</h5>
                         <p>Project description.</p>
                     </div>
                 </div>
@@ -78,7 +83,28 @@
         <section id="certs" class="block">
             <div class="container">
                 <h2>Courses and Certificates</h2>
-                <p>Course Details</p>
+                <div class="corporation">
+                    <div class="corp-header">
+                        <img src="images/corp1-logo.png" alt="AWS Logo" class="corp-logo">
+                        <h3>Amazon Web Services (AWS)</h3>
+                        <button onclick="toggleDropdown('corp1-certs')">Show Certificates</button>
+                    </div>
+                    <div id="corp1-certs" class="certificates" style="display: none;">
+                        <p><a href="https://www.example.com/certificate1" target="_blank">Certificate 1 from Corporation 1</a></p>
+                        <p><a href="https://www.example.com/certificate2" target="_blank">Certificate 2 from Corporation 1</a></p>
+                    </div>
+                </div>
+                <div class="corporation">
+                    <div class="corp-header">
+                        <img src="images/corp2-logo.png" alt="Corporation 2 Logo" class="corp-logo">
+                        <h3>Corporation 2</h3>
+                        <button onclick="toggleDropdown('corp2-certs')">Show Certificates</button>
+                    </div>
+                    <div id="corp2-certs" class="certificates" style="display: none;">
+                        <p><a href="https://www.example.com/certificate1" target="_blank">Certificate 1 from Corporation 2</a></p>
+                        <p><a href="https://www.example.com/certificate2" target="_blank">Certificate 2 from Corporation 2</a></p>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="contact" class="block">
@@ -93,5 +119,7 @@
             <p>&copy; 2024 Yip Kai Men. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="scripts/dropdown.js"></script>
 </body>
 </html>

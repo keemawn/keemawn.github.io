@@ -63,6 +63,10 @@ main {
     text-align: center;
 }
 
+.work_experiences h5 {
+    margin-top: 0;
+}
+
 .work_experiences h3 {
     margin-top: 0;
 }
@@ -107,4 +111,39 @@ footer {
     width: 35px;
     height: auto;
     vertical-align: middle;
+}
+
+/* For the Certificates Portion */
+.corporation {
+    margin-bottom: 1.5rem;
+}
+
+.corp-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.corp-logo {
+    width: 50px;
+    height: auto;
+}
+
+.certificates {
+    margin-left: 60px; /* Adjust based on logo width to align with the text */
+}
+
+button {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
 }
