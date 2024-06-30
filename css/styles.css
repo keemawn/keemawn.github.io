@@ -151,7 +151,7 @@ button:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .container {
-        width: 90%;
+        width: 70%;
     }
 
     nav ul li {
@@ -180,7 +180,7 @@ button:hover {
 
 @media (max-width: 480px) {
     .container {
-        width: 95%;
+        width: 75%;
     }
 
     header {
