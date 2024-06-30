@@ -242,4 +242,34 @@ body.dark-mode nav ul li a:hover {
     background-color: #0056b3;
 }
 
-/* Back to Top */
+/* Back to Top Button */
+#back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    padding: 1rem;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.6s, transform 0.6s, color 0.6s;
+}
+
+#back-to-top:hover {
+    background-color: #777;
+    transform: scale(1.1);
+}
+
+body.dark-mode #back-to-top {
+    background-color: #e9c5c5;
+    color: #000000;
+    transition: background-color 0.6s, color 0.6s
+}
+
+body.dark-mode #back-to-top:hover {
+    background-color: #888;
+}
