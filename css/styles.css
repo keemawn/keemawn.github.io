@@ -6,7 +6,7 @@ body {
     line-height: 1.6;
     background-color: #f9f9f9;
     color: #333;
-    transition: background-color 0.6s, color 0.6s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode {
@@ -118,6 +118,10 @@ body.dark-mode .block {
 
 .work_experiences h5, .work_experiences h3, .work_experiences h2 {
     margin-top: 0;
+}
+
+.job-title {
+    font-size: 20px;
 }
 
 body.dark-mode .work_experiences {
