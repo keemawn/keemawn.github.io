@@ -40,19 +40,20 @@ main {
 
 .block {
     background-color: #fff;
+    text-align: center;
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.projects {
+.experiences {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 2rem;
 }
 
-.project {
+.work_experiences {
     background: #f4f4f4;
     padding: 1rem;
     border: 1px solid #ddd;
@@ -62,11 +63,15 @@ main {
     text-align: center;
 }
 
-.project h3 {
+.work_experiences h3 {
     margin-top: 0;
 }
 
-.project a {
+.work_experiences h2 {
+    margin-top: 0;
+}
+
+.work_experiences a {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -76,7 +81,7 @@ main {
     border-radius: 4px;
 }
 
-.project a:hover {
+.work_experiences a:hover {
     background-color: #555;
 }
 
@@ -85,4 +90,21 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+}
+
+.company {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.company h2 {
+    margin: 0; /* Ensure there is no margin around the company name */
+    line-height: 1; /* Adjust line height if needed */
+}
+
+.company-logo {
+    width: 35px;
+    height: auto;
+    vertical-align: middle;
 }
