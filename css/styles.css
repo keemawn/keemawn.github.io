@@ -1,3 +1,4 @@
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,19 +9,32 @@ body {
     transition: background-color 0.6s, color 0.6s;
 }
 
+body.dark-mode {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+/* Container */
 .container {
     width: 80%;
     margin: 0 auto;
 }
 
+/* Header Styles */
 header {
     background: #83b2e2;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
-    transition: 0.6s, color 0.6s;
+    transition: background-color 0.6s, color 0.6s;
 }
 
+body.dark-mode header {
+    background: #222;
+    color: #fff;
+}
+
+/* Navigation Styles */
 nav ul {
     list-style: none;
     padding: 0;
@@ -49,10 +63,21 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+body.dark-mode nav ul li a {
+    background-color: #666;
+    color: #fff;
+}
+
+body.dark-mode nav ul li a:hover {
+    background-color: #0056b3;
+}
+
+/* Main Content Styles */
 main {
     padding: 2rem 0;
 }
 
+/* Block Styles */
 .block {
     background-color: #fff;
     text-align: center;
@@ -63,6 +88,12 @@ main {
     transition: background-color 0.6s, box-shadow 0.6s, color 0.6s;
 }
 
+body.dark-mode .block {
+    background-color: #463c3c;
+    color: #f9f9f9;
+}
+
+/* Work Experiences Styles */
 .experiences {
     display: flex;
     flex-direction: column;
@@ -85,26 +116,16 @@ main {
     transform: scale(1.02);
 }
 
-.work_experiences h5 {
+.work_experiences h5, .work_experiences h3, .work_experiences h2 {
     margin-top: 0;
 }
 
-.work_experiences h3 {
-    margin-top: 0;
+body.dark-mode .work_experiences {
+    background: #6e6969;
+    border-color: #f2ebeb;
 }
 
-.work_experiences h2 {
-    margin-top: 0;
-}
-
-footer {
-    background: #83b2e2;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    transition: 0.6s, color 0.6s;
-}
-
+/* Company Styles */
 .company {
     display: inline-flex;
     align-items: center;
@@ -122,7 +143,7 @@ footer {
     vertical-align: middle;
 }
 
-/* For the Certificates Portion */
+/* Certificates Section */
 .corporation {
     margin-bottom: 1.5rem;
 }
@@ -140,18 +161,17 @@ footer {
 }
 
 .certificates {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
     margin-left: 60px; /* Adjust based on logo width to align with the text */
 }
 
-/* For Socials */
-
-.social-logo {
-    width: 90px;
-    height: auto;
-    vertical-align: middle;
-    transition: transform 0.3s;
+body.dark-mode .certificates {
+    background-color: #dfc8bd;
 }
 
+/* Social Links */
 .social-links {
     margin-top: 1rem;
 }
@@ -161,11 +181,18 @@ footer {
     gap: 1rem;
 }
 
+.social-logo {
+    width: 90px;
+    height: auto;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
 .social-logo:hover {
     transform: scale(1.1);
 }
 
-
+/* Buttons */
 button {
     margin-left: auto;
     padding: 0.5rem 1rem;
@@ -174,14 +201,23 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #555;
 }
 
-/* Dark Mode button */
+body.dark-mode button {
+    background-color: #9b8787;
+    color: #fff;
+}
 
+body.dark-mode button:hover {
+    background-color: #777;
+}
+
+/* Dark Mode Toggle Button */
 button#dark-mode-toggle {
     padding: 0.5rem 1rem;
     background-color: #555;
@@ -195,51 +231,13 @@ button#dark-mode-toggle {
     transition: background-color 0.6s;
 }
 
-body.dark-mode header {
-    background: #222;
-    color: #fff;
-    transition: background-color 0.6s;
-}
-
-body.dark-mode footer {
-    background: #222;
-    color: #fff;
-    transition: background-color 0.6s;
+button#dark-mode-toggle:hover {
+    background-color: #777;
 }
 
 body.dark-mode button#dark-mode-toggle {
     background-color: #884343;
     color: #ffffff;
-}
-
-button#dark-mode-toggle:hover {
-    background-color: #777;
-}
-
-body.dark-mode .block {
-    background-color: #463c3c;
-    color: #f9f9f9;
-    transition: background-color 0.6s;
-}
-
-body.dark-mode .work_experiences {
-    background: #6e6969;
-    border-color: #f2ebeb;
-    transition: background-color 0.6s;
-}
-
-body.dark-mode nav ul li a {
-    background-color: #666;
-    color: #fff;
-}
-
-nav ul li a:hover {
-    background-color: #007BFF;
-    transform: scale(1.05);
-}
-
-body.dark-mode nav ul li a:hover {
-    background-color: #0056b3;
 }
 
 /* Back to Top Button */
@@ -253,10 +251,10 @@ body.dark-mode nav ul li a:hover {
     background-color: #555;
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px; /* Adjust this value to make the corners rounded */
     cursor: pointer;
     font-size: 1.5rem;
-    transition: background-color 0.6s, transform 0.6s, color 0.6s;
+    transition: background-color 0.6s, transform 0.6s;
 }
 
 #back-to-top:hover {
@@ -267,9 +265,42 @@ body.dark-mode nav ul li a:hover {
 body.dark-mode #back-to-top {
     background-color: #e9c5c5;
     color: #000000;
-    transition: background-color 0.6s, color 0.6s
 }
 
 body.dark-mode #back-to-top:hover {
     background-color: #888;
+}
+
+/* Footer Styles */
+footer {
+    background: #83b2e2;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    transition: background-color 0.6s, color 0.6s;
+}
+
+body.dark-mode footer {
+    background: #222;
+    color: #fff;
+}
+
+/* Dark Mode Specific Styles */
+body.dark-mode nav ul li a {
+    background-color: #666;
+    color: #fff;
+}
+
+body.dark-mode nav ul li a:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode .block {
+    background-color: #463c3c;
+    color: #f9f9f9;
+}
+
+body.dark-mode .work_experiences {
+    background: #6e6969;
+    border-color: #f2ebeb;
 }
