@@ -147,3 +147,57 @@ button {
 button:hover {
     background-color: #555;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .corp-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .certificates {
+        margin-left: 0;
+    }
+
+    .work_experience {
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .experiences {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    header {
+        padding: 0.5rem 0;
+    }
+
+    nav ul li {
+        margin: 0.25rem 0;
+    }
+
+    button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .block {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
