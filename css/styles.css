@@ -89,7 +89,7 @@ main {
 }
 
 body.dark-mode .block {
-    background-color: #463c3c;
+    background-color: #655959;
     color: #f9f9f9;
 }
 
@@ -164,6 +164,14 @@ body.dark-mode .work_experiences {
     height: auto;
 }
 
+.certificates-container {
+    transition: background-color 0.6s;
+}
+
+body.dark-mode .certificates-container {
+    background-color: #655959;
+}
+
 .certificates {
     max-height: 0;
     overflow: hidden;
@@ -171,8 +179,8 @@ body.dark-mode .work_experiences {
     margin-left: 60px; /* Adjust based on logo width to align with the text */
 }
 
-body.dark-mode .certificates {
-    background-color: #dfc8bd;
+.certificates.expanded {
+    max-height: 1000px; /* Set a high value to ensure it expands fully */
 }
 
 /* Social Links */
@@ -300,11 +308,62 @@ body.dark-mode nav ul li a:hover {
 }
 
 body.dark-mode .block {
-    background-color: #463c3c;
+    background-color: #655959;
     color: #f9f9f9;
 }
 
 body.dark-mode .work_experiences {
     background: #6e6969;
     border-color: #f2ebeb;
+}
+
+/* Default Link Colors and Hover Animation */
+a:not(.social-icons a):not(nav a) {
+    color: #26528c; /* Default link color */
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+
+a:not(.social-icons a):not(nav a)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #3b67a0;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+a:not(.social-icons a):not(nav a):hover, a:not(.social-icons a):not(nav a):focus {
+    color: #26528c; /* Hover and focus link color */
+}
+
+a:not(.social-icons a):not(nav a):hover::after, a:not(.social-icons a):not(nav a):focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+a:not(.social-icons a):not(nav a):visited {
+    color: #26528c; /* Visited link color */
+}
+
+/* Dark Mode Link Colors and Hover Animation */
+body.dark-mode a:not(.social-icons a):not(nav a) {
+    color: #8ab4f8; /* Default link color in dark mode */
+}
+
+body.dark-mode a:not(.social-icons a):not(nav a)::after {
+    background: #8ab4f8;
+}
+
+body.dark-mode a:not(.social-icons a):not(nav a):hover, body.dark-mode a:not(.social-icons a):not(nav a):focus {
+    color: #93b2e4; /* Hover and focus link color in dark mode */
+}
+
+body.dark-mode a:not(.social-icons a):not(nav a):visited {
+    color: #8ab4f8; /* Visited link color in dark mode */
 }
