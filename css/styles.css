@@ -137,8 +137,8 @@ body.dark-mode .work_experiences {
 }
 
 .company h2 {
-    margin: 0; /* Ensure there is no margin around the company name */
-    line-height: 1; /* Adjust line height if needed */
+    margin: 0;
+    line-height: 1;
 }
 
 .company-logo {
@@ -170,18 +170,25 @@ body.dark-mode .work_experiences {
 
 body.dark-mode .certificates-container {
     background-color: #655959;
+    transition: background-color 0.6s
 }
 
 .certificates {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s ease;
-    margin-left: 60px; /* Adjust based on logo width to align with the text */
+    transition: max-height 0.6s ease, background-color 0.6s;
+    margin-left: 60px;
+    background-color: inherit; /* Ensures it matches the surrounding background */
 }
 
 .certificates.expanded {
     max-height: 1000px; /* Set a high value to ensure it expands fully */
 }
+
+body.dark-mode .certificates {
+    background-color: inherit; /* Ensures it matches the surrounding background */
+}
+
 
 /* Social Links */
 .social-links {
@@ -254,16 +261,16 @@ body.dark-mode button#dark-mode-toggle {
 
 /* Back to Top Button */
 #back-to-top {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    z-index: 1000; /* Ensure it stays on top of other elements */
+    z-index: 1000;
     padding: 1rem;
     background-color: #555;
     color: #fff;
     border: none;
-    border-radius: 10px; /* Adjust this value to make the corners rounded */
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1.5rem;
     transition: background-color 0.6s, transform 0.6s;
@@ -297,29 +304,9 @@ body.dark-mode footer {
     color: #fff;
 }
 
-/* Dark Mode Specific Styles */
-body.dark-mode nav ul li a {
-    background-color: #666;
-    color: #fff;
-}
-
-body.dark-mode nav ul li a:hover {
-    background-color: #0056b3;
-}
-
-body.dark-mode .block {
-    background-color: #655959;
-    color: #f9f9f9;
-}
-
-body.dark-mode .work_experiences {
-    background: #6e6969;
-    border-color: #f2ebeb;
-}
-
 /* Default Link Colors and Hover Animation */
 a:not(.social-icons a):not(nav a) {
-    color: #26528c; /* Default link color */
+    color: #26528c;
     text-decoration: none;
     position: relative;
     transition: color 0.3s;
@@ -339,7 +326,7 @@ a:not(.social-icons a):not(nav a)::after {
 }
 
 a:not(.social-icons a):not(nav a):hover, a:not(.social-icons a):not(nav a):focus {
-    color: #26528c; /* Hover and focus link color */
+    color: #26528c;
 }
 
 a:not(.social-icons a):not(nav a):hover::after, a:not(.social-icons a):not(nav a):focus::after {
@@ -348,12 +335,12 @@ a:not(.social-icons a):not(nav a):hover::after, a:not(.social-icons a):not(nav a
 }
 
 a:not(.social-icons a):not(nav a):visited {
-    color: #26528c; /* Visited link color */
+    color: #26528c;
 }
 
 /* Dark Mode Link Colors and Hover Animation */
 body.dark-mode a:not(.social-icons a):not(nav a) {
-    color: #8ab4f8; /* Default link color in dark mode */
+    color: #8ab4f8;
 }
 
 body.dark-mode a:not(.social-icons a):not(nav a)::after {
@@ -361,9 +348,141 @@ body.dark-mode a:not(.social-icons a):not(nav a)::after {
 }
 
 body.dark-mode a:not(.social-icons a):not(nav a):hover, body.dark-mode a:not(.social-icons a):not(nav a):focus {
-    color: #93b2e4; /* Hover and focus link color in dark mode */
+    color: #93b2e4;
 }
 
 body.dark-mode a:not(.social-icons a):not(nav a):visited {
-    color: #8ab4f8; /* Visited link color in dark mode */
+    color: #8ab4f8;
+}
+
+/* Dropdown Button Styles for Work Experience */
+.work_experiences .dropdown-btn {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.work_experiences .dropdown-btn:hover {
+    background-color: #555;
+}
+
+body.dark-mode .work_experiences .dropdown-btn {
+    background-color: #9b8787;
+    color: #fff;
+}
+
+body.dark-mode .work_experiences .dropdown-btn:hover {
+    background-color: #777;
+}
+
+/* Description Styles for Work Experience */
+.work_experiences .description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, background-color 0.6s;
+    margin-top: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+body.dark-mode .work_experiences .description {
+    background-color: #6e6969;
+}
+
+.work_experiences .description.expanded {
+    max-height: 500px; /* Adjust as needed */
+}
+
+/* Dropdown Button Styles for Certificates */
+.certificates .dropdown-btn {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.certificates .dropdown-btn:hover {
+    background-color: #555;
+}
+
+body.dark-mode .certificates .dropdown-btn {
+    background-color: #9b8787;
+    color: #fff;
+}
+
+body.dark-mode .certificates .dropdown-btn:hover {
+    background-color: #777;
+}
+
+/* Description Styles for Certificates */
+.certificates .description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, background-color 0.6s;
+    margin-top: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+body.dark-mode .certificates .description {
+    background-color: #6e6969;
+}
+
+.certificates .description.expanded {
+    max-height: 500px; /* Adjust as needed */
+}
+
+/* Dropdown Button Styles for Work Experience */
+.work-dropdown-btn {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.work-dropdown-btn:hover {
+    background-color: #555;
+}
+
+body.dark-mode .work-dropdown-btn {
+    background-color: #9b8787;
+    color: #fff;
+}
+
+body.dark-mode .work-dropdown-btn:hover {
+    background-color: #777;
+}
+
+/* Description Styles for Work Experience */
+.work-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, background-color 0.6s;
+    margin-top: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+body.dark-mode .work-description {
+    background-color: #6e6969;
+}
+
+.work-description.expanded {
+    max-height: 500px; /* Adjust as needed */
 }

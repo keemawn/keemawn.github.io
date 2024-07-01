@@ -34,7 +34,7 @@
             <div class="container">
                 <h2>Work Experience</h2>
                 <div class="experiences">
-                    <!-- Add your project details here -->
+                    <!-- Bosch -->
                     <div class="work_experiences">
                         <div class="company">
                             <img src="images/bosch.png" alt="Bosch Logo" class="company-logo">
@@ -42,9 +42,12 @@
                         </div>
                         <h3 class="job-title">Machine Learning and Sustainability Research Engineer Intern</h3>
                         <h5>Duration: Jan 2024 to May 2024</h5>
-                        <p>Project description.</p>
+                        <button class="work-dropdown-btn" onclick="toggleWorkDescription('bosch-desc')">Show Description</button>
+                        <div id="bosch-desc" class="work-description">
+                            <p>Project description.</p>
+                        </div>
                     </div>
-                    <!-- Repeat for more projects -->
+                    <!-- Edwards Lifesciences -->
                     <div class="work_experiences">
                         <div class="company">
                             <img src="images/edwards.png" alt="Edwards Lifesciences Logo" class="company-logo">
@@ -52,8 +55,12 @@
                         </div>
                         <h3 class="job-title">Digitalisation Intern</h3>
                         <h5>Duration: Jul 2023 to Dec 2023</h5>
-                        <p>Project description.</p>
+                        <button class="work-dropdown-btn" onclick="toggleWorkDescription('edwards-desc')">Show Description</button>
+                        <div id="edwards-desc" class="work-description">
+                            <p>Project description.</p>
+                        </div>
                     </div>
+                    <!-- AsiaGMP -->
                     <div class="work_experiences">
                         <div class="company">
                             <img src="images/agmp.png" alt="AsiaGMP Logo" class="company-logo">
@@ -61,21 +68,28 @@
                         </div>
                         <h3 class="job-title">Writer and Administration Assistant</h3>
                         <h5>Duration: May 2023 to Jun 2023</h5>
-                        <p>Project description.</p>
+                        <button class="work-dropdown-btn" onclick="toggleWorkDescription('agmp-desc')">Show Description</button>
+                        <div id="agmp-desc" class="work-description">
+                            <p>Project description.</p>
+                        </div>
                     </div>
+                    <!-- Samsung Electronics -->
                     <div class="work_experiences">
                         <div class="company">
                             <img src="images/samsung.png" alt="Samsung Logo" class="company-logo">
                             <h2>Samsung Electronics</h2>
-                            
                         </div>
-                        <h3 style = margin-top:0.75rem class="job-title">Galaxy Specialist</h3>
+                        <h3 class="job-title" style="margin-top: 0.75rem;">Galaxy Specialist</h3>
                         <h5>Duration: May 2022 to Jun 2023</h5>
-                        <p>Project description.</p>
+                        <button class="work-dropdown-btn" onclick="toggleWorkDescription('samsung-desc')">Show Description</button>
+                        <div id="samsung-desc" class="work-description">
+                            <p>Project description.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        
         <section id="projects" class="block">
             <div class="container">
                 <h2>Projects</h2>
@@ -169,6 +183,7 @@
     <button id="back-to-top" title="Back to Top">↑</button>
     <script src="scripts/dropdown.js"></script>
     <script src="scripts/dm.js"></script>
+    <script src="scripts/wedropdown.js"></script>
     
     
 </body>
