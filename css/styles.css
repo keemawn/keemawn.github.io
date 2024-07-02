@@ -94,6 +94,10 @@ body.dark-mode .block {
 }
 
 /* Work Experiences Styles */
+.work-description ul li {
+    text-align: left;
+}
+
 .experiences {
     display: flex;
     flex-direction: column;
