@@ -16,8 +16,9 @@ body.dark-mode {
 
 /* Container */
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 /* Header Styles */
@@ -36,10 +37,8 @@ body.dark-mode header {
 
 /* Navigation Styles */
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
 }
@@ -494,7 +493,10 @@ body.dark-mode .work-description {
 
 /* Skills Section */
 .skills-container {
-    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .skills-list {
@@ -504,19 +506,21 @@ body.dark-mode .work-description {
     list-style: none;
     padding: 0;
     margin: 0;
-    justify-content: center; /* Center the items */
+    justify-content: center;
 }
 
 .skills-list li {
-    background-color: #f4f4f4;
+    background: #f4f4f4;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    margin: 0.5rem 0;
+    margin: 0.5rem;
+    flex: 1 0 auto; /* Flex grow, shrink, and basis to make items responsive */
     transition: background-color 0.6s;
 }
 
+
 body.dark-mode .skills-list li {
-    background-color: #6e6969;
+    background: #6e6969;
     color: #f9f9f9;
     transition: color 0.6s, background-color 0.6s;
 }
@@ -533,12 +537,12 @@ body.dark-mode .skills-container h3 {
 
 /* Projects Section */
 .project {
-    background-color: #f4f4f4;
+    background: #f4f4f4;
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.6s, box-shadow 0.6s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .project h3 {
@@ -581,3 +585,33 @@ body.dark-mode .project p {
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
 }
 */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-list li {
+        flex: 1 0 80px; /* Adjust flex basis for smaller screens */
+    }
+
+    .project {
+        padding: 1rem;
+    }
+
+    .work_experiences, .certificates {
+        padding: 1rem;
+    }
+
+    .skills-container, .experiences {
+        flex-direction: column;
+        align-items: center;
+    }
+}
