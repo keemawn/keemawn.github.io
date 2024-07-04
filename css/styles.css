@@ -91,6 +91,7 @@ main {
 body.dark-mode .block {
     background-color: #655959;
     color: #f9f9f9;
+    transition: background-color 0.6s, color 0.6s;
 }
 
 /* Work Experiences Styles */
@@ -528,3 +529,55 @@ body.dark-mode .skills-container h3 {
     color: #f9f9f9;
     transition: color 0.6s;
 }
+
+
+/* Projects Section */
+.project {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.6s, box-shadow 0.6s;
+}
+
+.project h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #333;
+    transition: color 0.6s;
+}
+
+.project p {
+    margin: 0;
+    color: #666;
+}
+
+/*.project:hover {
+    background-color: #e8e8e8;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+    */
+
+body.dark-mode .project {
+    background-color: #6e6969;
+    color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: background-color 0.6s;
+}
+
+body.dark-mode .project h3 {
+    color: #f9f9f9;
+    transition: color 0.6s;
+}
+
+body.dark-mode .project p {
+    color: #ccc;
+    transition: color 0.6s;
+}
+
+/*body.dark-mode .project:hover {
+    background-color: #5a5a5a;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+*/
