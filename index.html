@@ -5,60 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yip Kai Men - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- React CDN - Development versions for better error reporting -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- React CDN - Production versions for better reliability -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX - Using a more reliable version -->
     <script src="https://unpkg.com/@babel/standalone@7.23.5/babel.min.js"></script>
 </head>
 <body>
-    <div id="root">
-        <!-- Loading message -->
-        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; color: #666;">
-            <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
-                <div>Loading Portfolio...</div>
-            </div>
-        </div>
-    </div>
-
+    <div id="root"></div>
+    
+    <!-- All React code in a single script tag with proper type -->
     <script type="text/babel">
-        console.log("Script starting...");
-        
         // Portfolio Data Configuration
         const portfolioData = {
           personal: {
             name: "Yip Kai Men",
-            title: "Mechanical Engineering Graduate | AI & Finance Enthusiast",
+            title: "Mechanical Engineering Graduate | AI Engineer and Analyst",
             email: "yipkaimen@yahoo.com",
             tagline: "Discover My Story"
           },
-          
           about: {
             text: [
-              "Hi, I'm Kai Men, a recent graduate from the National University of Singapore with a degree in Mechanical Engineering. My academic journey has provided me with a robust foundation in engineering principles and analytical thinking, allowing me to approach problems with a systematic and quantitative perspective.",
+              "Hi, I'm Kai Men, a graduate student from National University of Singapore. I major in Mechanical Engineering. My academic journey has provided me with a robust foundation in engineering principles and financial analysis, allowing me to approach problems with a unique blend of technical and quantitative perspectives.",
               "I am passionate about technology, data, and finance, particularly in the realms of artificial intelligence and market analysis. My interest in AI stems from its transformative potential in various industries, including finance, where data-driven decision-making is paramount.",
               "I am fascinated by how machine learning algorithms and advanced data analytics can drive innovation and efficiency in financial markets. Welcome to my portfolio!"
             ],
             stats: [
-              { number: "NUS", label: "Graduate" },
-              { number: "3+", label: "Projects Built" }, 
+              { number: "Graduate", label: "NUS BEng" },
+              { number: "3+", label: "Projects Built" },
               { number: "13", label: "Certifications" },
               { number: "5", label: "Work Experiences" }
             ]
           },
-
           experience: [
             {
               date: "Aug 2024 - Present",
-              title: "Specialist", 
+              title: "Specialist",
               company: "Apple",
               description: "Enriching lives through technology and customer service excellence."
             },
             {
               date: "Jan 2024 - May 2024",
               title: "Machine Learning/AI and Sustainability Research Engineer Intern",
-              company: "Bosch", 
+              company: "Bosch",
               description: "Utilized MATLAB Simulink for modeling feedback control systems. Conducted laboratory experiments to collect test data for training anomaly detection algorithms using K-means clustering and CNNs. Leveraged Python data visualization techniques for complex datasets."
             },
             {
@@ -68,19 +57,18 @@
               description: "Conducted time study and data analysis of manufacturing processes. Implemented impact studies on Manufacturing Execution System (MES), achieving 46% increase in administration productivity. Developed Excel VBA macros for automation."
             },
             {
-              date: "May 2022 - Jun 2023", 
+              date: "May 2022 - Jun 2023",
               title: "Galaxy Specialist",
               company: "Samsung Electronics",
               description: "Provided after-sales support for smartphones, tablets and wearables. Assisted with device setup and technical support. Played significant role in key product launches including Galaxy Z Flip and Fold releases."
             },
             {
-              date: "May 2023 - Jun 2023",
-              title: "Writer and Administration Assistant", 
+              date: "May 2023 - Jun 2023", 
+              title: "Writer and Administration Assistant",
               company: "AsiaGMP",
               description: "Authored and optimized 4 Standard Operating Procedures (SOP) to improve logistic and report writing processes. Provided administrative support including data entry analysis and scheduling coordination."
             }
           ],
-
           projects: [
             {
               title: "SPY Analytics & Forecasting",
@@ -90,8 +78,8 @@
               github: "#"
             },
             {
-              title: "SMU Business Intelligence and Analytics Club Datathon 2025",
-              tech: "Plotly Dash, Data Visualization, Business Intelligence", 
+              title: "SMU Business Intelligence and Analytics Club Datathon 2025", 
+              tech: "Plotly Dash, Data Visualization, Business Intelligence",
               description: "Delivered interactive dashboards with extracted structured data to visualize trends, relationships, and risks, providing actionable insights for ISD decision-making.",
               link: "#",
               github: "https://github.com/dhcchh/Team-xgboosted---SMU-BIA-Datathon-2025"
@@ -100,11 +88,10 @@
               title: "HSBC Global Private Banking Case Competition 2023",
               tech: "Financial Analysis, Asset Management, Market Research",
               description: "Participated in a team of 4 to construct and present specialized pitch on asset management and market insights for global private banking solutions.",
-              link: "#",
+              link: "#", 
               github: "#"
             }
           ],
-
           skills: [
             {
               category: "Programming Languages",
@@ -117,7 +104,7 @@
               ]
             },
             {
-              category: "Software & Tools",
+              category: "Software & Tools", 
               items: [
                 { name: "MATLAB", level: 85 },
                 { name: "Tableau", level: 80 },
@@ -136,34 +123,32 @@
               ]
             }
           ],
-
           education: [
             {
               type: "Education",
               title: "Bachelor of Mechanical Engineering",
-              institution: "National University of Singapore • 2024",
-              description: "Robust foundation in engineering principles and analytical thinking, with strong problem-solving and quantitative analysis skills."
+              institution: "National University of Singapore",
+              description: "Robust foundation in engineering principles and financial analysis, combining technical and quantitative perspectives for problem-solving."
             },
             {
               type: "Specialization",
-              title: "Machine Learning Specialization", 
+              title: "Machine Learning Specialization",
               institution: "DeepLearning.AI • 2024",
               description: "Comprehensive specialization covering supervised learning, advanced algorithms, unsupervised learning, and reinforcement learning."
             },
             {
               type: "Specialization",
               title: "Google Data Analytics & Advanced Data Analytics",
-              institution: "Google • 2024", 
+              institution: "Google • 2024",
               description: "Professional certificates in data analytics covering data collection, analysis, visualization, and advanced statistical methods."
             },
             {
-              type: "Certification",
+              type: "Certification",  
               title: "AWS Cloud Practitioner & ML Introduction",
               institution: "Amazon Web Services • 2024",
               description: "Cloud computing fundamentals and introduction to machine learning services on AWS platform."
             }
           ],
-
           social: [
             { platform: "LinkedIn", icon: "in", description: "Connect professionally", url: "https://www.linkedin.com/in/yipkaimen/" },
             { platform: "GitHub", icon: "gh", description: "View my projects", url: "https://github.com/keemawn" },
@@ -171,12 +156,14 @@
           ]
         };
 
-        console.log("Portfolio data loaded:", portfolioData);
-
-        // React Components using React.createElement (more reliable than JSX)
+        // Navigation Component
         const Navigation = ({ activeSection }) => {
           const navItems = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'contact'];
           
+          const handleClick = (section) => {
+            document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+          };
+
           return React.createElement('nav', { className: 'navbar' },
             React.createElement('div', { className: 'container' },
               React.createElement('div', { className: 'nav-container' },
@@ -189,7 +176,7 @@
                         className: activeSection === item ? 'active' : '',
                         onClick: (e) => {
                           e.preventDefault();
-                          document.getElementById(item).scrollIntoView({ behavior: 'smooth' });
+                          handleClick(item);
                         }
                       }, item.charAt(0).toUpperCase() + item.slice(1))
                     )
@@ -200,21 +187,13 @@
           );
         };
 
+        // Hero Component
         const Hero = () => {
-          const { name, title, tagline, profileImage } = portfolioData.personal;
-          
           return React.createElement('section', { id: 'home', className: 'hero' },
             React.createElement('div', { className: 'hero-content' },
-              React.createElement('div', { className: 'profile-img' },
-                profileImage ? 
-                  React.createElement('img', {
-                    src: profileImage,
-                    alt: name,
-                    style: { width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }
-                  }) : '👤'
-              ),
-              React.createElement('h1', null, name),
-              React.createElement('h2', null, title),
+              React.createElement('div', { className: 'profile-img' }, '👤'),
+              React.createElement('h1', null, portfolioData.personal.name),
+              React.createElement('h2', null, portfolioData.personal.title),
               React.createElement('a', {
                 href: '#about',
                 className: 'cta-button',
@@ -222,25 +201,24 @@
                   e.preventDefault();
                   document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
                 }
-              }, tagline)
+              }, portfolioData.personal.tagline)
             )
           );
         };
 
+        // About Component
         const About = () => {
-          const { text, stats } = portfolioData.about;
-          
           return React.createElement('section', { id: 'about', className: 'section' },
             React.createElement('div', { className: 'container' },
               React.createElement('h2', { className: 'section-title' }, 'About Me'),
               React.createElement('div', { className: 'about-content' },
                 React.createElement('div', { className: 'about-text' },
-                  text.map((paragraph, index) =>
+                  portfolioData.about.text.map((paragraph, index) =>
                     React.createElement('p', { key: index }, paragraph)
                   )
                 ),
                 React.createElement('div', { className: 'about-stats' },
-                  stats.map((stat, index) =>
+                  portfolioData.about.stats.map((stat, index) =>
                     React.createElement('div', { key: index, className: 'stat-item' },
                       React.createElement('span', { className: 'stat-number' }, stat.number),
                       React.createElement('span', null, stat.label)
@@ -252,6 +230,7 @@
           );
         };
 
+        // Experience Component
         const Experience = () => {
           return React.createElement('section', { id: 'experience', className: 'section' },
             React.createElement('div', { className: 'container' },
@@ -272,6 +251,7 @@
           );
         };
 
+        // Projects Component
         const Projects = () => {
           return React.createElement('section', { id: 'projects', className: 'section' },
             React.createElement('div', { className: 'container' },
@@ -305,6 +285,7 @@
           );
         };
 
+        // Skills Component
         const Skills = () => {
           return React.createElement('section', { id: 'skills', className: 'section' },
             React.createElement('div', { className: 'container' },
@@ -334,6 +315,7 @@
           );
         };
 
+        // Education Component
         const Education = () => {
           return React.createElement('section', { id: 'education', className: 'section' },
             React.createElement('div', { className: 'container' },
@@ -352,6 +334,7 @@
           );
         };
 
+        // Contact Component
         const Contact = () => {
           const [formData, setFormData] = React.useState({
             name: '',
@@ -458,8 +441,7 @@
           const [activeSection, setActiveSection] = React.useState('home');
 
           React.useEffect(() => {
-            console.log("App useEffect running");
-            
+            // Intersection Observer for animations
             const observerOptions = {
               threshold: 0.1,
               rootMargin: '0px 0px -50px 0px'
@@ -470,52 +452,56 @@
                 if (entry.isIntersecting) {
                   entry.target.classList.add('visible');
                   
+                  // Update active section
                   const sectionId = entry.target.id;
                   if (sectionId) {
                     setActiveSection(sectionId);
                   }
                   
+                  // Animate skill bars
                   if (entry.target.id === 'skills') {
                     const skillBars = entry.target.querySelectorAll('.skill-progress');
                     skillBars.forEach(bar => {
                       const width = bar.getAttribute('data-width');
                       setTimeout(() => {
                         bar.style.width = width;
-                      }, 500);
+                      }, 300);
                     });
                   }
                   
+                  // Animate timeline items
                   if (entry.target.id === 'experience') {
                     const timelineItems = entry.target.querySelectorAll('.timeline-item');
                     timelineItems.forEach((item, index) => {
                       setTimeout(() => {
                         item.classList.add('visible');
-                      }, index * 150);
+                      }, index * 200);
                     });
                   }
                 }
               });
             }, observerOptions);
 
+            // Observe all sections
             document.querySelectorAll('.section').forEach(section => {
               observer.observe(section);
             });
 
+            // Navbar background on scroll
             const handleScroll = () => {
               const navbar = document.querySelector('.navbar');
-              if (navbar) {
-                if (window.scrollY > 100) {
-                  navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                  navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
-                } else {
-                  navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                  navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-                }
+              if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+              } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
               }
             };
 
             window.addEventListener('scroll', handleScroll);
 
+            // Cleanup
             return () => {
               window.removeEventListener('scroll', handleScroll);
               observer.disconnect();
@@ -534,40 +520,10 @@
           );
         };
 
-        console.log("About to render app");
-
         // Render the App
-        const renderApp = () => {
-          try {
-            console.log("Attempting to render...");
-            const container = document.getElementById('root');
-            if (!container) {
-              console.error("Root container not found!");
-              return;
-            }
-            
-            const root = ReactDOM.createRoot(container);
-            root.render(React.createElement(App));
-            console.log("App rendered successfully!");
-          } catch (error) {
-            console.error("Error rendering app:", error);
-            // Fallback: show error message
-            document.getElementById('root').innerHTML = `
-              <div style="padding: 2rem; text-align: center; color: red;">
-                <h2>Error Loading Portfolio</h2>
-                <p>Please check the browser console for details.</p>
-                <p>Error: ${error.message}</p>
-              </div>
-            `;
-          }
-        };
-
-        // Wait for everything to load
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', renderApp);
-        } else {
-          renderApp();
-        }
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(React.createElement(App));
     </script>
 </body>
 </html><!DOCTYPE html>
@@ -575,570 +531,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yip Kai Men - Portfolio</title>
+    <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- React CDN - Production versions -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone@7.23.5/babel.min.js"></script>
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-    <div id="root">
-        <!-- Loading message -->
-        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; color: #666;">
-            <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
-                <div>Loading Portfolio...</div>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/babel">
-        // Portfolio Data Configuration
-        const portfolioData = {
-          personal: {
-            name: "Yip Kai Men",
-            title: "Mechanical Engineering Graduate | AI & Finance Enthusiast",
-            email: "yipkaimen@yahoo.com",
-            tagline: "Discover My Story",
-            // To add your photo, uncomment and update the path:
-            // profileImage: "images/your-photo.jpg"
-          },
-          
-          about: {
-            text: [
-              "Hi, I'm Kai Men, a recent graduate from the National University of Singapore with a degree in Mechanical Engineering. My academic journey has provided me with a robust foundation in engineering principles and analytical thinking, allowing me to approach problems with a systematic and quantitative perspective.",
-              "I am passionate about technology, data, and finance, particularly in the realms of artificial intelligence and market analysis. My interest in AI stems from its transformative potential in various industries, including finance, where data-driven decision-making is paramount.",
-              "I am fascinated by how machine learning algorithms and advanced data analytics can drive innovation and efficiency in financial markets. Welcome to my portfolio!"
-            ],
-            stats: [
-              { number: "NUS", label: "Graduate" },
-              { number: "3+", label: "Projects Built" }, 
-              { number: "13", label: "Certifications" },
-              { number: "5", label: "Work Experiences" }
-            ]
-          },
-
-          experience: [
-            {
-              date: "Aug 2024 - Present",
-              title: "Specialist", 
-              company: "Apple",
-              description: "Enriching lives through technology and customer service excellence."
-            },
-            {
-              date: "Jan 2024 - May 2024",
-              title: "Machine Learning/AI and Sustainability Research Engineer Intern",
-              company: "Bosch", 
-              description: "Utilized MATLAB Simulink for modeling feedback control systems. Conducted laboratory experiments to collect test data for training anomaly detection algorithms using K-means clustering and CNNs. Leveraged Python data visualization techniques for complex datasets."
-            },
-            {
-              date: "Jul 2023 - Dec 2023",
-              title: "Digitalisation Intern",
-              company: "Edwards Lifesciences",
-              description: "Conducted time study and data analysis of manufacturing processes. Implemented impact studies on Manufacturing Execution System (MES), achieving 46% increase in administration productivity. Developed Excel VBA macros for automation."
-            },
-            {
-              date: "May 2022 - Jun 2023", 
-              title: "Galaxy Specialist",
-              company: "Samsung Electronics",
-              description: "Provided after-sales support for smartphones, tablets and wearables. Assisted with device setup and technical support. Played significant role in key product launches including Galaxy Z Flip and Fold releases."
-            },
-            {
-              date: "May 2023 - Jun 2023",
-              title: "Writer and Administration Assistant", 
-              company: "AsiaGMP",
-              description: "Authored and optimized 4 Standard Operating Procedures (SOP) to improve logistic and report writing processes. Provided administrative support including data entry analysis and scheduling coordination."
-            }
-          ],
-
-          projects: [
-            {
-              title: "SPY Analytics & Forecasting",
-              tech: "Python, Machine Learning, Financial Analysis",
-              description: "A deep dive into SPY's historical performance, inflation-adjusted returns, and future growth potential using machine learning techniques for financial market analysis.",
-              link: "https://www.linkedin.com/posts/dhchan_investment-analytics-highlighting-the-value-activity-7280614927784927232-Ezie",
-              github: "#"
-            },
-            {
-              title: "SMU Business Intelligence and Analytics Club Datathon 2025",
-              tech: "Plotly Dash, Data Visualization, Business Intelligence", 
-              description: "Delivered interactive dashboards with extracted structured data to visualize trends, relationships, and risks, providing actionable insights for ISD decision-making.",
-              link: "#",
-              github: "https://github.com/dhcchh/Team-xgboosted---SMU-BIA-Datathon-2025"
-            },
-            {
-              title: "HSBC Global Private Banking Case Competition 2023",
-              tech: "Financial Analysis, Asset Management, Market Research",
-              description: "Participated in a team of 4 to construct and present specialized pitch on asset management and market insights for global private banking solutions.",
-              link: "#",
-              github: "#"
-            }
-          ],
-
-          skills: [
-            {
-              category: "Programming Languages",
-              items: [
-                { name: "Python", level: 85 },
-                { name: "JavaScript", level: 75 },
-                { name: "HTML & CSS", level: 80 },
-                { name: "SQL", level: 75 },
-                { name: "R Language", level: 70 }
-              ]
-            },
-            {
-              category: "Software & Tools",
-              items: [
-                { name: "MATLAB", level: 85 },
-                { name: "Tableau", level: 80 },
-                { name: "Power BI", level: 75 },
-                { name: "SOLIDWORKS", level: 70 },
-                { name: "Plotly Dash", level: 75 }
-              ]
-            },
-            {
-              category: "Machine Learning & Data",
-              items: [
-                { name: "Machine Learning", level: 80 },
-                { name: "Data Analytics", level: 85 },
-                { name: "Data Visualization", level: 80 },
-                { name: "Statistical Analysis", level: 75 }
-              ]
-            }
-          ],
-
-          education: [
-            {
-              type: "Education",
-              title: "Bachelor of Mechanical Engineering",
-              institution: "National University of Singapore • 2024",
-              description: "Robust foundation in engineering principles and analytical thinking, with strong problem-solving and quantitative analysis skills."
-            },
-            {
-              type: "Specialization",
-              title: "Machine Learning Specialization", 
-              institution: "DeepLearning.AI • 2024",
-              description: "Comprehensive specialization covering supervised learning, advanced algorithms, unsupervised learning, and reinforcement learning."
-            },
-            {
-              type: "Specialization",
-              title: "Google Data Analytics & Advanced Data Analytics",
-              institution: "Google • 2024", 
-              description: "Professional certificates in data analytics covering data collection, analysis, visualization, and advanced statistical methods."
-            },
-            {
-              type: "Certification",
-              title: "AWS Cloud Practitioner & ML Introduction",
-              institution: "Amazon Web Services • 2024",
-              description: "Cloud computing fundamentals and introduction to machine learning services on AWS platform."
-            }
-          ],
-
-          social: [
-            { platform: "LinkedIn", icon: "in", description: "Connect professionally", url: "https://www.linkedin.com/in/yipkaimen/" },
-            { platform: "GitHub", icon: "gh", description: "View my projects", url: "https://github.com/keemawn" },
-            { platform: "Email", icon: "@", description: "yipkaimen@yahoo.com", url: "mailto:yipkaimen@yahoo.com" }
-          ]
-        };
-
-        // React Components
-        const Navigation = ({ activeSection }) => {
-          const navItems = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'contact'];
-          
-          return (
-            <nav className="navbar">
-              <div className="container">
-                <div className="nav-container">
-                  <div className="logo">{portfolioData.personal.name}</div>
-                  <ul className="nav-links">
-                    {navItems.map(item => (
-                      <li key={item}>
-                        <a 
-                          href={`#${item}`}
-                          className={activeSection === item ? 'active' : ''}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            document.getElementById(item).scrollIntoView({ behavior: 'smooth' });
-                          }}
-                        >
-                          {item.charAt(0).toUpperCase() + item.slice(1)}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </nav>
-          );
-        };
-
-        const Hero = () => {
-          const { name, title, tagline, profileImage } = portfolioData.personal;
-          
-          return (
-            <section id="home" className="hero">
-              <div className="hero-content">
-                <div className="profile-img">
-                  {profileImage ? (
-                    <img 
-                      src={profileImage} 
-                      alt={name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
-                    />
-                  ) : '👤'}
-                </div>
-                <h1>{name}</h1>
-                <h2>{title}</h2>
-                <a 
-                  href="#about" 
-                  className="cta-button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  {tagline}
-                </a>
-              </div>
-            </section>
-          );
-        };
-
-        const About = () => {
-          const { text, stats } = portfolioData.about;
-          
-          return (
-            <section id="about" className="section">
-              <div className="container">
-                <h2 className="section-title">About Me</h2>
-                <div className="about-content">
-                  <div className="about-text">
-                    {text.map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
-                    ))}
-                  </div>
-                  <div className="about-stats">
-                    {stats.map((stat, index) => (
-                      <div key={index} className="stat-item">
-                        <span className="stat-number">{stat.number}</span>
-                        <span>{stat.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          );
-        };
-
-        const Experience = () => {
-          return (
-            <section id="experience" className="section">
-              <div className="container">
-                <h2 className="section-title">Professional Experience</h2>
-                <div className="timeline">
-                  {portfolioData.experience.map((item, index) => (
-                    <div key={index} className="timeline-item">
-                      <div className="timeline-content">
-                        <div className="timeline-date">{item.date}</div>
-                        <div className="timeline-title">{item.title}</div>
-                        <div className="timeline-company">{item.company}</div>
-                        <p>{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          );
-        };
-
-        const Projects = () => {
-          return (
-            <section id="projects" className="section">
-              <div className="container">
-                <h2 className="section-title">My Projects</h2>
-                <div className="projects-grid">
-                  {portfolioData.projects.map((project, index) => (
-                    <div key={index} className="project-card">
-                      <div className="project-header">
-                        <h3 className="project-title">{project.title}</h3>
-                        <div className="project-tech">{project.tech}</div>
-                      </div>
-                      <p className="project-description">{project.description}</p>
-                      <div className="project-links">
-                        {project.link !== '#' && (
-                          <a 
-                            href={project.link} 
-                            className="project-link" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                          >
-                            Live Demo
-                          </a>
-                        )}
-                        {project.github !== '#' && (
-                          <a 
-                            href={project.github} 
-                            className="project-link" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                          >
-                            GitHub
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          );
-        };
-
-        const Skills = () => {
-          return (
-            <section id="skills" className="section">
-              <div className="container">
-                <h2 className="section-title">Skills & Expertise</h2>
-                <div className="skills-grid">
-                  {portfolioData.skills.map((category, index) => (
-                    <div key={index} className="skill-category">
-                      <h3>{category.category}</h3>
-                      {category.items.map((skill, skillIndex) => (
-                        <div key={skillIndex} className="skill-item">
-                          <div className="skill-name">
-                            <span>{skill.name}</span>
-                            <span>{skill.level}%</span>
-                          </div>
-                          <div className="skill-bar">
-                            <div 
-                              className="skill-progress" 
-                              data-width={`${skill.level}%`}
-                            ></div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          );
-        };
-
-        const Education = () => {
-          return (
-            <section id="education" className="section">
-              <div className="container">
-                <h2 className="section-title">Education & Certifications</h2>
-                <div className="education-grid">
-                  {portfolioData.education.map((item, index) => (
-                    <div key={index} className="education-card">
-                      <div className="education-type">{item.type}</div>
-                      <div className="education-title">{item.title}</div>
-                      <div className="education-institution">{item.institution}</div>
-                      <p>{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          );
-        };
-
-        const Contact = () => {
-          const [formData, setFormData] = React.useState({
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
-          });
-
-          const handleInputChange = (e) => {
-            setFormData({
-              ...formData,
-              [e.target.name]: e.target.value
-            });
-          };
-
-          const handleSubmit = (e) => {
-            e.preventDefault();
-            
-            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-              alert('Please fill in all fields');
-              return;
-            }
-            
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            setFormData({ name: '', email: '', subject: '', message: '' });
-          };
-
-          return (
-            <section id="contact" className="section">
-              <div className="container">
-                <h2 className="section-title">Let's Connect</h2>
-                <div className="contact-content">
-                  <form className="contact-form" onSubmit={handleSubmit}>
-                    <h3>Send me a message</h3>
-                    <div className="form-group">
-                      <label htmlFor="name">Name</label>
-                      <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required 
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="email">Email</label>
-                      <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required 
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="subject">Subject</label>
-                      <input 
-                        type="text" 
-                        id="subject" 
-                        name="subject" 
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required 
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="message">Message</label>
-                      <textarea 
-                        id="message" 
-                        name="message" 
-                        rows="5" 
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                      ></textarea>
-                    </div>
-                    <button type="submit" className="submit-btn">Send Message</button>
-                  </form>
-                  <div className="social-links">
-                    {portfolioData.social.map((social, index) => (
-                      <a 
-                        key={index} 
-                        href={social.url} 
-                        className="social-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <div className="social-icon">{social.icon}</div>
-                        <div>
-                          <strong>{social.platform}</strong>
-                          <div>{social.description}</div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          );
-        };
-
-        // Main App Component
-        const App = () => {
-          const [activeSection, setActiveSection] = React.useState('home');
-
-          React.useEffect(() => {
-            const observerOptions = {
-              threshold: 0.1,
-              rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add('visible');
-                  
-                  const sectionId = entry.target.id;
-                  if (sectionId) {
-                    setActiveSection(sectionId);
-                  }
-                  
-                  // GENTLER skill bar animation - no flashing
-                  if (entry.target.id === 'skills') {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                      const width = bar.getAttribute('data-width');
-                      setTimeout(() => {
-                        bar.style.width = width;
-                      }, 500); // Longer delay for gentler animation
-                    });
-                  }
-                  
-                  // Timeline animation with smaller delay
-                  if (entry.target.id === 'experience') {
-                    const timelineItems = entry.target.querySelectorAll('.timeline-item');
-                    timelineItems.forEach((item, index) => {
-                      setTimeout(() => {
-                        item.classList.add('visible');
-                      }, index * 150); // Reduced delay
-                    });
-                  }
-                }
-              });
-            }, observerOptions);
-
-            document.querySelectorAll('.section').forEach(section => {
-              observer.observe(section);
-            });
-
-            const handleScroll = () => {
-              const navbar = document.querySelector('.navbar');
-              if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
-              } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-              }
-            };
-
-            window.addEventListener('scroll', handleScroll);
-
-            return () => {
-              window.removeEventListener('scroll', handleScroll);
-              observer.disconnect();
-            };
-          }, []);
-
-          return (
-            <div className="App">
-              <Navigation activeSection={activeSection} />
-              <Hero />
-              <About />
-              <Experience />
-              <Projects />
-              <Skills />
-              <Education />
-              <Contact />
-            </div>
-          );
-        };
-
-        // Render the App
-        document.addEventListener('DOMContentLoaded', () => {
-          const container = document.getElementById('root');
-          const root = ReactDOM.createRoot(container);
-          root.render(<App />);
-        });
-    </script>
+    <div id="root"></div>
+    <script type="text/babel" src="script.js"></script>
 </body>
 </html>
