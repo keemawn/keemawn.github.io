@@ -44,7 +44,7 @@ A clean, professional HTML portfolio website with proper structure, mobile navig
 
 ## 📁 Files Structure:
 ```
-yip_portfolio_fixed/
+keemawn.github.io/
 ├── index.html          # Clean HTML structure
 ├── styles.css          # Professional styling
 ├── script.js           # Smooth interactions
