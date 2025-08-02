@@ -6,553 +6,488 @@
     <title>Yip Kai Men - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.png">
-    <!-- React CDN - Production versions for better reliability -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <!-- Babel for JSX - Using a more reliable version -->
-    <script src="https://unpkg.com/@babel/standalone@7.23.5/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div id="root"></div>
-    
-    <!-- All React code in a single script tag with proper type -->
-    <script type="text/babel">
-        // Portfolio Data Configuration
-        const portfolioData = {
-          personal: {
-            name: "Yip Kai Men",
-            title: "Mechanical Engineering Graduate | AI Engineer and Analyst",
-            email: "yipkaimen@yahoo.com",
-            tagline: "Discover My Story"
-          },
-          about: {
-            text: [
-              "Hi, I'm Kai Men, a graduate student from National University of Singapore. I major in Mechanical Engineering. My academic journey has provided me with a robust foundation in engineering principles and financial analysis, allowing me to approach problems with a unique blend of technical and quantitative perspectives.",
-              "I am passionate about technology, data, and finance, particularly in the realms of artificial intelligence and market analysis. My interest in AI stems from its transformative potential in various industries, including finance, where data-driven decision-making is paramount.",
-              "I am fascinated by how machine learning algorithms and advanced data analytics can drive innovation and efficiency in financial markets. Welcome to my portfolio!"
-            ],
-            stats: [
-              { number: "Graduate", label: "NUS BEng" },
-              { number: "3+", label: "Projects Built" },
-              { number: "13", label: "Certifications" },
-              { number: "5", label: "Work Experiences" }
-            ]
-          },
-          experience: [
-            {
-              date: "Aug 2024 - Feb 2025",
-              title: "Specialist",
-              company: "Apple",
-              description: "Enriching lives through technology and customer service excellence."
-            },
-            {
-              date: "Jan 2024 - May 2024",
-              title: "Machine Learning/AI and Sustainability Research Engineer Intern",
-              company: "Bosch",
-              description: "Utilized MATLAB Simulink for modeling feedback control systems. Conducted laboratory experiments to collect test data for training anomaly detection algorithms using K-means clustering and CNNs. Leveraged Python data visualization techniques for complex datasets."
-            },
-            {
-              date: "Jul 2023 - Dec 2023",
-              title: "Digitalisation Intern",
-              company: "Edwards Lifesciences",
-              description: "Conducted time study and data analysis of manufacturing processes. Implemented impact studies on Manufacturing Execution System (MES), achieving 46% increase in administration productivity. Developed Excel VBA macros for automation."
-            },
-            {
-              date: "May 2023 - Jun 2023", 
-              title: "Writer and Administration Assistant",
-              company: "AsiaGMP",
-              description: "Authored and optimized 4 Standard Operating Procedures (SOP) to improve logistic and report writing processes. Provided administrative support including data entry analysis and scheduling coordination."
-            },
-            {
-              date: "May 2022 - Jun 2023",
-              title: "Galaxy Specialist",
-              company: "Samsung Electronics",
-              description: "Provided after-sales support for smartphones, tablets and wearables. Assisted with device setup and technical support. Played significant role in key product launches including Galaxy Z Flip and Fold releases."
-            }
-          ],
-          projects: [
-            {
-              title: "SPY Analytics & Forecasting",
-              tech: "Python, Machine Learning, Financial Analysis",
-              description: "A deep dive into SPY's historical performance, inflation-adjusted returns, and future growth potential using machine learning techniques for financial market analysis.",
-              link: "https://www.linkedin.com/posts/dhchan_investment-analytics-highlighting-the-value-activity-7280614927784927232-Ezie",
-              github: "#"
-            },
-            {
-              title: "SMU Business Intelligence and Analytics Club Datathon 2025", 
-              tech: "Plotly Dash, Data Visualization, Business Intelligence",
-              description: "Delivered interactive dashboards with extracted structured data to visualize trends, relationships, and risks, providing actionable insights for ISD decision-making.",
-              link: "#",
-              github: "https://github.com/dhcchh/Team-xgboosted---SMU-BIA-Datathon-2025"
-            },
-            {
-              title: "HSBC Global Private Banking Case Competition 2023",
-              tech: "Financial Analysis, Asset Management, Market Research",
-              description: "Participated in a team of 4 to construct and present specialized pitch on asset management and market insights for global private banking solutions.",
-              link: "#", 
-              github: "#"
-            }
-          ],
-          skills: [
-            {
-              category: "Programming Languages",
-              items: [
-                { name: "Python", level: 85 },
-                { name: "JavaScript", level: 75 },
-                { name: "HTML & CSS", level: 80 },
-                { name: "SQL", level: 75 },
-                { name: "R Language", level: 70 }
-              ]
-            },
-            {
-              category: "Software & Tools", 
-              items: [
-                { name: "MATLAB", level: 85 },
-                { name: "Tableau", level: 80 },
-                { name: "Power BI", level: 75 },
-                { name: "SOLIDWORKS", level: 70 },
-                { name: "Plotly Dash", level: 75 }
-              ]
-            },
-            {
-              category: "Machine Learning & Data",
-              items: [
-                { name: "Machine Learning", level: 80 },
-                { name: "Data Analytics", level: 85 },
-                { name: "Data Visualization", level: 80 },
-                { name: "Statistical Analysis", level: 75 }
-              ]
-            }
-          ],
-          education: [
-            {
-              type: "Education",
-              title: "Bachelor of Mechanical Engineering",
-              institution: "National University of Singapore • 2025",
-              description: "Robust foundation in engineering principles and financial analysis, combining technical and quantitative perspectives for problem-solving."
-            },
-            {
-              type: "Specialization",
-              title: "Machine Learning Specialization",
-              institution: "DeepLearning.AI • 2024",
-              description: "Comprehensive specialization covering supervised learning, advanced algorithms, unsupervised learning, and reinforcement learning."
-            },
-            {
-              type: "Specialization",
-              title: "Google Data Analytics & Advanced Data Analytics",
-              institution: "Google • 2024",
-              description: "Professional certificates in data analytics covering data collection, analysis, visualization, and advanced statistical methods."
-            },
-            {
-              type: "Certification",  
-              title: "AWS Cloud Practitioner & ML Introduction",
-              institution: "Amazon Web Services • 2024",
-              description: "Cloud computing fundamentals and introduction to machine learning services on AWS platform."
-            }
-          ],
-          social: [
-            { platform: "LinkedIn", icon: "in", description: "Connect professionally", url: "https://www.linkedin.com/in/yipkaimen/" },
-            { platform: "GitHub", icon: "gh", description: "View my projects", url: "https://github.com/keemawn" },
-            { platform: "Email", icon: "@", description: "yipkaimen@yahoo.com", url: "mailto:yipkaimen@yahoo.com" }
-          ]
-        };
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">Yip Kai Men</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        // Navigation Component
-        const Navigation = ({ activeSection }) => {
-          const navItems = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'contact'];
-          
-          const handleClick = (section) => {
-            document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-          };
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-img">
+                <img src="images/profile.jpg" alt="Yip Kai Men" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h1>Yip Kai Men</h1>
+            <h2>Mechanical Engineering Graduate | AI Engineer and Analyst</h2>
+            <a href="#about" class="cta-button">Discover My Story</a>
+        </div>
+    </section>
 
-          return React.createElement('nav', { className: 'navbar' },
-            React.createElement('div', { className: 'container' },
-              React.createElement('div', { className: 'nav-container' },
-                React.createElement('div', { className: 'logo' }, portfolioData.personal.name),
-                React.createElement('ul', { className: 'nav-links' },
-                  navItems.map(item => 
-                    React.createElement('li', { key: item },
-                      React.createElement('a', {
-                        href: `#${item}`,
-                        className: activeSection === item ? 'active' : '',
-                        onClick: (e) => {
-                          e.preventDefault();
-                          handleClick(item);
-                        }
-                      }, item.charAt(0).toUpperCase() + item.slice(1))
-                    )
-                  )
-                )
-              )
-            )
-          );
-        };
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi, I'm Kai Men, a graduate student from National University of Singapore. I major in Mechanical Engineering. My academic journey has provided me with a robust foundation in engineering principles and financial analysis, allowing me to approach problems with a unique blend of technical and quantitative perspectives.</p>
+                    
+                    <p>I am passionate about technology, data, and finance, particularly in the realms of artificial intelligence and market analysis. My interest in AI stems from its transformative potential in various industries, including finance, where data-driven decision-making is paramount.</p>
+                    
+                    <p>I am fascinated by how machine learning algorithms and advanced data analytics can drive innovation and efficiency in financial markets. Welcome to my portfolio!</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">Graduate</span>
+                        <span>NUS BEng</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3+</span>
+                        <span>Projects Built</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">13</span>
+                        <span>Certifications</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span>Work Experiences</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Hero Component
-        const Hero = () => {
-          return React.createElement('section', { id: 'home', className: 'hero' },
-            React.createElement('div', { className: 'hero-content' },
-              React.createElement('div', { className: 'profile-img' },
-                  React.createElement('img', {
-                    src: 'images/profile.jpg',    // ← Change this to your image path
-                    alt: 'Yip Kai Men',
-                    style: { 
-                      width: '100%', 
-                      height: '100%', 
-                      objectFit: 'cover', 
-                      borderRadius: '50%' 
-                    }
-                  })
-                ),
-              React.createElement('h1', null, portfolioData.personal.name),
-              React.createElement('h2', null, portfolioData.personal.title),
-              React.createElement('a', {
-                href: '#about',
-                className: 'cta-button',
-                onClick: (e) => {
-                  e.preventDefault();
-                  document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-                }
-              }, portfolioData.personal.tagline)
-            )
-          );
-        };
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2025 - Present</div>
+                        <div class="timeline-title">AI Engineer</div>
+                        <div class="timeline-company">AgileAlgo</div>
+                        <p>Developing everyday AI solutions using agentic frameworks including CrewAI and LangGraph. Building knowledge graphs with Neo4j for enhanced data relationships and implementing AI-driven automation to solve real-world problems.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2024 - Feb 2025</div>
+                        <div class="timeline-title">Specialist</div>
+                        <div class="timeline-company">Apple</div>
+                        <p>Enriching lives through technology and customer service excellence.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jan 2024 - May 2024</div>
+                        <div class="timeline-title">Machine Learning/AI and Sustainability Research Engineer Intern</div>
+                        <div class="timeline-company">Bosch</div>
+                        <p>Utilized MATLAB Simulink for modeling feedback control systems. Conducted laboratory experiments to collect test data for training anomaly detection algorithms using K-means clustering and CNNs. Leveraged Python data visualization techniques for complex datasets.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jul 2023 - Dec 2023</div>
+                        <div class="timeline-title">Digitalisation Intern</div>
+                        <div class="timeline-company">Edwards Lifesciences</div>
+                        <p>Conducted time study and data analysis of manufacturing processes. Implemented impact studies on Manufacturing Execution System (MES), achieving 46% increase in administration productivity. Developed Excel VBA macros for automation.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2023 - Jun 2023</div>
+                        <div class="timeline-title">Writer and Administration Assistant</div>
+                        <div class="timeline-company">AsiaGMP</div>
+                        <p>Authored and optimized 4 Standard Operating Procedures (SOP) to improve logistic and report writing processes. Provided administrative support including data entry analysis and scheduling coordination.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2022 - Jun 2023</div>
+                        <div class="timeline-title">Galaxy Specialist</div>
+                        <div class="timeline-company">Samsung Electronics</div>
+                        <p>Provided after-sales support for smartphones, tablets and wearables. Assisted with device setup and technical support. Played significant role in key product launches including Galaxy Z Flip and Fold releases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // About Component
-        const About = () => {
-          return React.createElement('section', { id: 'about', className: 'section' },
-            React.createElement('div', { className: 'container' },
-              React.createElement('h2', { className: 'section-title' }, 'About Me'),
-              React.createElement('div', { className: 'about-content' },
-                React.createElement('div', { className: 'about-text' },
-                  portfolioData.about.text.map((paragraph, index) =>
-                    React.createElement('p', { key: index }, paragraph)
-                  )
-                ),
-                React.createElement('div', { className: 'about-stats' },
-                  portfolioData.about.stats.map((stat, index) =>
-                    React.createElement('div', { key: index, className: 'stat-item' },
-                      React.createElement('span', { className: 'stat-number' }, stat.number),
-                      React.createElement('span', null, stat.label)
-                    )
-                  )
-                )
-              )
-            )
-          );
-        };
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">SPY Analytics & Forecasting</h3>
+                        <div class="project-tech">Python, Machine Learning, Financial Analysis</div>
+                    </div>
+                    <p class="project-description">A deep dive into SPY's historical performance, inflation-adjusted returns, and future growth potential using machine learning techniques for financial market analysis.</p>
+                    <div class="project-links">
+                        <a href="https://www.linkedin.com/posts/dhchan_investment-analytics-highlighting-the-value-activity-7280614927784927232-Ezie" class="project-link" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">SMU Business Intelligence and Analytics Club Datathon 2025</h3>
+                        <div class="project-tech">Plotly Dash, Data Visualization, Business Intelligence</div>
+                    </div>
+                    <p class="project-description">Delivered interactive dashboards with extracted structured data to visualize trends, relationships, and risks, providing actionable insights for ISD decision-making.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/dhcchh/Team-xgboosted---SMU-BIA-Datathon-2025" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">HSBC Global Private Banking Case Competition 2023</h3>
+                        <div class="project-tech">Financial Analysis, Asset Management, Market Research</div>
+                    </div>
+                    <p class="project-description">Participated in a team of 4 to construct and present specialized pitch on asset management and market insights for global private banking solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Experience Component
-        const Experience = () => {
-          return React.createElement('section', { id: 'experience', className: 'section' },
-            React.createElement('div', { className: 'container' },
-              React.createElement('h2', { className: 'section-title' }, 'Professional Experience'),
-              React.createElement('div', { className: 'timeline' },
-                portfolioData.experience.map((item, index) =>
-                  React.createElement('div', { key: index, className: 'timeline-item' },
-                    React.createElement('div', { className: 'timeline-content' },
-                      React.createElement('div', { className: 'timeline-date' }, item.date),
-                      React.createElement('div', { className: 'timeline-title' }, item.title),
-                      React.createElement('div', { className: 'timeline-company' }, item.company),
-                      React.createElement('p', null, item.description)
-                    )
-                  )
-                )
-              )
-            )
-          );
-        };
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>AI & Agentic Frameworks</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>CrewAI</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>LangGraph</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Neo4j & Knowledge Graphs</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>AI Solution Development</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML & CSS</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>R Language</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Software & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>MATLAB</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Tableau</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Power BI</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SOLIDWORKS</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Plotly Dash</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Machine Learning & Data</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Machine Learning</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Data Analytics</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Data Visualization</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Statistical Analysis</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Projects Component
-        const Projects = () => {
-          return React.createElement('section', { id: 'projects', className: 'section' },
-            React.createElement('div', { className: 'container' },
-              React.createElement('h2', { className: 'section-title' }, 'My Projects'),
-              React.createElement('div', { className: 'projects-grid' },
-                portfolioData.projects.map((project, index) =>
-                  React.createElement('div', { key: index, className: 'project-card' },
-                    React.createElement('div', { className: 'project-header' },
-                      React.createElement('h3', { className: 'project-title' }, project.title),
-                      React.createElement('div', { className: 'project-tech' }, project.tech)
-                    ),
-                    React.createElement('p', { className: 'project-description' }, project.description),
-                    React.createElement('div', { className: 'project-links' },
-                      project.link !== '#' ? React.createElement('a', {
-                        href: project.link,
-                        className: 'project-link',
-                        target: '_blank',
-                        rel: 'noopener noreferrer'
-                      }, 'Live Demo') : null,
-                      project.github !== '#' ? React.createElement('a', {
-                        href: project.github,
-                        className: 'project-link',
-                        target: '_blank',
-                        rel: 'noopener noreferrer'
-                      }, 'GitHub') : null
-                    )
-                  )
-                )
-              )
-            )
-          );
-        };
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-type">Education</div>
+                    <div class="education-title">Bachelor of Mechanical Engineering</div>
+                    <div class="education-institution">National University of Singapore • 2025</div>
+                    <p>Robust foundation in engineering principles and financial analysis, combining technical and quantitative perspectives for problem-solving.</p>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-type">Specialization</div>
+                    <div class="education-title">Machine Learning Specialization</div>
+                    <div class="education-institution">DeepLearning.AI • 2024</div>
+                    <p>Comprehensive specialization covering supervised learning, advanced algorithms, unsupervised learning, and reinforcement learning.</p>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-type">Specialization</div>
+                    <div class="education-title">Google Data Analytics & Advanced Data Analytics</div>
+                    <div class="education-institution">Google • 2024</div>
+                    <p>Professional certificates in data analytics covering data collection, analysis, visualization, and advanced statistical methods.</p>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-type">Certification</div>
+                    <div class="education-title">AWS Cloud Practitioner & ML Introduction</div>
+                    <div class="education-institution">Amazon Web Services • 2024</div>
+                    <p>Cloud computing fundamentals and introduction to machine learning services on AWS platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Skills Component
-        const Skills = () => {
-          return React.createElement('section', { id: 'skills', className: 'section' },
-            React.createElement('div', { className: 'container' },
-              React.createElement('h2', { className: 'section-title' }, 'Skills & Expertise'),
-              React.createElement('div', { className: 'skills-grid' },
-                portfolioData.skills.map((category, index) =>
-                  React.createElement('div', { key: index, className: 'skill-category' },
-                    React.createElement('h3', null, category.category),
-                    category.items.map((skill, skillIndex) =>
-                      React.createElement('div', { key: skillIndex, className: 'skill-item' },
-                        React.createElement('div', { className: 'skill-name' },
-                          React.createElement('span', null, skill.name),
-                          React.createElement('span', null, `${skill.level}%`)
-                        ),
-                        React.createElement('div', { className: 'skill-bar' },
-                          React.createElement('div', {
-                            className: 'skill-progress',
-                            'data-width': `${skill.level}%`
-                          })
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          );
-        };
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <h3>Send me a message</h3>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yipkaimen/" class="social-link" target="_blank">
+                        <div class="social-icon">in</div>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <div>Connect professionally</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/keemawn" class="social-link" target="_blank">
+                        <div class="social-icon">gh</div>
+                        <div>
+                            <strong>GitHub</strong>
+                            <div>View my projects</div>
+                        </div>
+                    </a>
+                    <a href="mailto:yipkaimen@yahoo.com" class="social-link">
+                        <div class="social-icon">@</div>
+                        <div>
+                            <strong>Email</strong>
+                            <div>yipkaimen@yahoo.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Education Component
-        const Education = () => {
-          return React.createElement('section', { id: 'education', className: 'section' },
-            React.createElement('div', { className: 'container' },
-              React.createElement('h2', { className: 'section-title' }, 'Education & Certifications'),
-              React.createElement('div', { className: 'education-grid' },
-                portfolioData.education.map((item, index) =>
-                  React.createElement('div', { key: index, className: 'education-card' },
-                    React.createElement('div', { className: 'education-type' }, item.type),
-                    React.createElement('div', { className: 'education-title' }, item.title),
-                    React.createElement('div', { className: 'education-institution' }, item.institution),
-                    React.createElement('p', null, item.description)
-                  )
-                )
-              )
-            )
-          );
-        };
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yip Kai Men. All rights reserved. | Mechanical Engineering Graduate & AI Analyst</p>
+        </div>
+    </footer>
 
-        // Contact Component
-        const Contact = () => {
-          const [formData, setFormData] = React.useState({
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
-          });
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="mobile-nav-btn" data-target="#home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="mobile-nav-btn" data-target="#about">
+            <i class="fas fa-user"></i>
+            <span>About</span>
+        </button>
+        <button class="mobile-nav-btn" data-target="#experience">
+            <i class="fas fa-briefcase"></i>
+            <span>Experience</span>
+        </button>
+        <button class="mobile-nav-btn" data-target="#projects">
+            <i class="fas fa-code"></i>
+            <span>Projects</span>
+        </button>
+        <button class="mobile-nav-btn" data-target="#skills">
+            <i class="fas fa-cogs"></i>
+            <span>Skills</span>
+        </button>
+        <button class="mobile-nav-btn" data-target="#education">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Education</span>
+        </button>
+        <button class="mobile-nav-btn" data-target="#contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </button>
+    </div>
 
-          const handleInputChange = (e) => {
-            setFormData({
-              ...formData,
-              [e.target.name]: e.target.value
-            });
-          };
-
-          const handleSubmit = (e) => {
-            e.preventDefault();
-            
-            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-              alert('Please fill in all fields');
-              return;
-            }
-            
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            setFormData({ name: '', email: '', subject: '', message: '' });
-          };
-
-          return React.createElement('section', { id: 'contact', className: 'section' },
-            React.createElement('div', { className: 'container' },
-              React.createElement('h2', { className: 'section-title' }, 'Let\'s Connect'),
-              React.createElement('div', { className: 'contact-content' },
-                React.createElement('form', { className: 'contact-form', onSubmit: handleSubmit },
-                  React.createElement('h3', null, 'Send me a message'),
-                  React.createElement('div', { className: 'form-group' },
-                    React.createElement('label', { htmlFor: 'name' }, 'Name'),
-                    React.createElement('input', {
-                      type: 'text',
-                      id: 'name',
-                      name: 'name',
-                      value: formData.name,
-                      onChange: handleInputChange,
-                      required: true
-                    })
-                  ),
-                  React.createElement('div', { className: 'form-group' },
-                    React.createElement('label', { htmlFor: 'email' }, 'Email'),
-                    React.createElement('input', {
-                      type: 'email',
-                      id: 'email',
-                      name: 'email',
-                      value: formData.email,
-                      onChange: handleInputChange,
-                      required: true
-                    })
-                  ),
-                  React.createElement('div', { className: 'form-group' },
-                    React.createElement('label', { htmlFor: 'subject' }, 'Subject'),
-                    React.createElement('input', {
-                      type: 'text',
-                      id: 'subject',
-                      name: 'subject',
-                      value: formData.subject,
-                      onChange: handleInputChange,
-                      required: true
-                    })
-                  ),
-                  React.createElement('div', { className: 'form-group' },
-                    React.createElement('label', { htmlFor: 'message' }, 'Message'),
-                    React.createElement('textarea', {
-                      id: 'message',
-                      name: 'message',
-                      rows: 5,
-                      value: formData.message,
-                      onChange: handleInputChange,
-                      required: true
-                    })
-                  ),
-                  React.createElement('button', { type: 'submit', className: 'submit-btn' }, 'Send Message')
-                ),
-                React.createElement('div', { className: 'social-links' },
-                  portfolioData.social.map((social, index) =>
-                    React.createElement('a', {
-                      key: index,
-                      href: social.url,
-                      className: 'social-link',
-                      target: '_blank',
-                      rel: 'noopener noreferrer'
-                    },
-                      React.createElement('div', { className: 'social-icon' }, social.icon),
-                      React.createElement('div', null,
-                        React.createElement('strong', null, social.platform),
-                        React.createElement('div', null, social.description)
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          );
-        };
-
-        // Main App Component
-        const App = () => {
-          const [activeSection, setActiveSection] = React.useState('home');
-
-          React.useEffect(() => {
-            // Intersection Observer for animations
-            const observerOptions = {
-              threshold: 0.1,
-              rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add('visible');
-                  
-                  // Update active section
-                  const sectionId = entry.target.id;
-                  if (sectionId) {
-                    setActiveSection(sectionId);
-                  }
-                  
-                  // Animate skill bars
-                  if (entry.target.id === 'skills') {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                      const width = bar.getAttribute('data-width');
-                      setTimeout(() => {
-                        bar.style.width = width;
-                      }, 300);
-                    });
-                  }
-                  
-                  // Animate timeline items
-                  if (entry.target.id === 'experience') {
-                    const timelineItems = entry.target.querySelectorAll('.timeline-item');
-                    timelineItems.forEach((item, index) => {
-                      setTimeout(() => {
-                        item.classList.add('visible');
-                      }, index * 200);
-                    });
-                  }
-                }
-              });
-            }, observerOptions);
-
-            // Observe all sections
-            document.querySelectorAll('.section').forEach(section => {
-              observer.observe(section);
-            });
-
-            // Navbar background on scroll
-            const handleScroll = () => {
-              const navbar = document.querySelector('.navbar');
-              if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
-              } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-              }
-            };
-
-            window.addEventListener('scroll', handleScroll);
-
-            // Cleanup
-            return () => {
-              window.removeEventListener('scroll', handleScroll);
-              observer.disconnect();
-            };
-          }, []);
-
-          return React.createElement('div', { className: 'App' },
-            React.createElement(Navigation, { activeSection }),
-            React.createElement(Hero),
-            React.createElement(About),
-            React.createElement(Experience),
-            React.createElement(Projects),
-            React.createElement(Skills),
-            React.createElement(Education),
-            React.createElement(Contact)
-          );
-        };
-
-        // Render the App
-        const container = document.getElementById('root');
-        const root = ReactDOM.createRoot(container);
-        root.render(React.createElement(App));
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- React CDN -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <!-- Babel for JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
-    <div id="root"></div>
-    <script type="text/babel" src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
