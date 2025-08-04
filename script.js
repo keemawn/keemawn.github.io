@@ -42,38 +42,124 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Initialize sections as hidden for scroll animations (except hero)
+    sections.forEach(section => {
+        if (section.id !== 'home') {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'all 0.8s ease';
+        }
+    });
+    
+    // Initialize timeline items for animations
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transition = 'all 0.8s ease';
+        if (item.matches(':nth-child(odd)')) {
+            item.style.transform = 'translateX(-50px)';
+        } else {
+            item.style.transform = 'translateX(50px)';
+        }
+    });
+    
+    // Initialize skill bars for animations
+    document.querySelectorAll('.skill-progress').forEach(bar => {
+        bar.style.width = '0';
+        bar.style.transition = 'width 1.5s ease';
+    });
+    
+    // Initialize project cards for animations
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+    });
+    
+    // Initialize education cards for animations  
+    document.querySelectorAll('.education-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+    });
+    
+    // Initialize stat items for animations
+    document.querySelectorAll('.stat-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.8)';
+        item.style.transition = 'all 0.6s ease';
+    });
+    
     // Scroll animations - reveal sections as they come into view
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.15,
         rootMargin: '0px 0px -50px 0px'
     };
     
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Fade in the section first
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
                 entry.target.classList.add('visible');
                 
-                // Animate timeline items
-                if (entry.target.id === 'experience') {
-                    const timelineItems = entry.target.querySelectorAll('.timeline-item');
-                    timelineItems.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateX(0)';
-                        }, index * 200);
-                    });
-                }
-                
-                // Animate skills
-                if (entry.target.id === 'skills') {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach((bar, index) => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, index * 100 + 300);
-                    });
-                }
+                // Then animate specific elements within sections
+                setTimeout(() => {
+                    // Animate timeline items (Experience section)
+                    if (entry.target.id === 'experience') {
+                        const timelineItems = entry.target.querySelectorAll('.timeline-item');
+                        timelineItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateX(0)';
+                            }, index * 400 + 300);
+                        });
+                    }
+                    
+                    // Animate skill bars (Skills section)
+                    if (entry.target.id === 'skills') {
+                        const skillBars = entry.target.querySelectorAll('.skill-progress');
+                        skillBars.forEach((bar, index) => {
+                            const width = bar.getAttribute('data-width');
+                            setTimeout(() => {
+                                bar.style.width = width;
+                            }, index * 100 + 500);
+                        });
+                    }
+                    
+                    // Animate project cards (Projects section)
+                    if (entry.target.id === 'projects') {
+                        const projectCards = entry.target.querySelectorAll('.project-card');
+                        projectCards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, index * 200 + 300);
+                        });
+                    }
+                    
+                    // Animate education cards (Education section)
+                    if (entry.target.id === 'education') {
+                        const educationCards = entry.target.querySelectorAll('.education-card');
+                        educationCards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, index * 150 + 300);
+                        });
+                    }
+                    
+                    // Animate stat items (About section)
+                    if (entry.target.id === 'about') {
+                        const statItems = entry.target.querySelectorAll('.stat-item');
+                        statItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, index * 150 + 500);
+                        });
+                    }
+                }, 200); // Small delay after section fade-in
             }
         });
     }, observerOptions);
@@ -126,65 +212,47 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Contact form functionality
     const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        if (!name || !email || !subject || !message) {
-            alert('Please fill in all fields');
-            return;
-        }
-        
-        // Here you would typically send the data to a server
-        // For now, we'll just show a success message
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        contactForm.reset();
-    });
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            contactForm.reset();
+        });
+    }
     
     // Smooth scroll for CTA button
     const ctaButton = document.querySelector('.cta-button');
-    ctaButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        const offsetTop = target.offsetTop - 70;
-        
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            const offsetTop = target.offsetTop - 70;
+            
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
     
-    // Add hover effects to timeline items
-    document.querySelectorAll('.timeline-content').forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.borderColor = '#3498db';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.borderColor = 'transparent';
-        });
-    });
-    
-    // Initialize sections as visible by default
-    sections.forEach(section => {
-        if (section.id !== 'home') {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-        }
-    });
-    
-    // Add scroll-to-top functionality when scrolling down
+    // Add scroll-to-top functionality
     let scrollToTopBtn = null;
     
     window.addEventListener('scroll', function() {
         const scrollPosition = window.scrollY;
         
-        // Show/hide scroll-to-top button
         if (scrollPosition > 500) {
             if (!scrollToTopBtn) {
                 scrollToTopBtn = document.createElement('button');
@@ -214,16 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         top: 0,
                         behavior: 'smooth'
                     });
-                });
-                
-                scrollToTopBtn.addEventListener('mouseenter', function() {
-                    this.style.background = '#2980b9';
-                    this.style.transform = 'translateY(-2px)';
-                });
-                
-                scrollToTopBtn.addEventListener('mouseleave', function() {
-                    this.style.background = '#3498db';
-                    this.style.transform = 'translateY(0)';
                 });
                 
                 document.body.appendChild(scrollToTopBtn);
