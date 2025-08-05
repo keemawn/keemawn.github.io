@@ -213,22 +213,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form functionality
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
             
-            if (!name || !email || !subject || !message) {
-                alert('Please fill in all fields');
-                return;
+            try {
+                const response = await fetch('https://formspree.io/f/xblkzoyw', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Thank you! Your message has been sent.');
+                    contactForm.reset();
+                } else {
+                    alert('Oops! There was a problem sending your message.');
+                }
+            } catch (error) {
+                alert('Oops! There was a problem sending your message.');
             }
-            
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            contactForm.reset();
         });
     }
     
