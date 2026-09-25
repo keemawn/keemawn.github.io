@@ -20,7 +20,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'ml',
     title: 'AI / ML Frameworks',
-    skills: ['CrewAI', 'LangGraph', 'Scikit-learn', 'TensorFlow', 'CNNs'],
+    skills: ['CrewAI', 'LangGraph', 'MCP', 'RAG', 'Scikit-learn', 'TensorFlow', 'CNNs'],
     size: 'large',
   },
   {
@@ -32,7 +32,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'graph',
     title: 'Graph & Networks',
-    skills: ['Knowledge Graphs', 'GNNs', 'NetworkX'],
+    skills: ['Neo4j', 'Knowledge Graphs', 'GNNs', 'NetworkX'],
     size: 'medium',
   },
   {
@@ -44,7 +44,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'web',
     title: 'Web & Dev',
-    skills: ['HTML', 'CSS', 'SOLIDWORKS'],
+    skills: ['HTML', 'CSS', 'REST APIs', 'SOLIDWORKS'],
     size: 'small',
   },
   {

@@ -8,10 +8,18 @@
   --bg-card: #ffffff;
   --accent-blue: #3b6fd4;
   --accent-blue-light: #6b9fe8;
+  --accent-blue-rgb: 59, 111, 212;
   --text-primary: #1a1f2e;
   --text-secondary: #4a5568;
   --text-muted: #8a93a8;
   --border: #d8dde8;
+  --shadow-color: 220 35% 45%;
+
+  --radius-card: 1rem;
+  --radius-control: 0.625rem;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .dark {
@@ -20,10 +28,12 @@
   --bg-card: #1e2435;
   --accent-blue: #5b8fee;
   --accent-blue-light: #7aabf0;
+  --accent-blue-rgb: 91, 143, 238;
   --text-primary: #e8ecf4;
   --text-secondary: #a0aabf;
   --text-muted: #5a6478;
   --border: #2a3147;
+  --shadow-color: 220 60% 3%;
 }
 
 *,
@@ -36,12 +46,78 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Geist Variable', system-ui, sans-serif;
+  font-feature-settings: 'ss01' 1, 'cv01' 1;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
   margin: 0;
   padding: 0;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+
+::selection {
+  background-color: rgb(var(--accent-blue-rgb) / 0.24);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Ambient grain texture, fixed and non-interactive so it never repaints on scroll */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.dark .grain-overlay {
+  opacity: 0.05;
+}
+
+/* Frosted glass surface with a solid-fill fallback when transparency is reduced */
+.glass-surface {
+  background-color: color-mix(in srgb, var(--bg-primary) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-surface {
+    background-color: var(--bg-primary);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 999px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
 }

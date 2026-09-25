@@ -52,4 +52,15 @@ export const projects: Project[] = [
     githubUrl: '#',
     size: 'medium',
   },
+  {
+    id: 4,
+    title: 'HSBC Global Private Banking Case Competition',
+    tagline: 'Team pitch on asset management and market insights',
+    description:
+      'Competed in a team of four to construct and present a specialised pitch on asset management strategy and market insights for HSBC Global Private Banking.',
+    techTags: ['Financial Modelling', 'Market Research', 'Presentation'],
+    period: 'Oct 2023',
+    githubUrl: '#',
+    size: 'medium',
+  },
 ]

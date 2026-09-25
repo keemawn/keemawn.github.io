@@ -4,10 +4,10 @@ import Skills from '../components/home/Skills'
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
       <About />
       <Skills />
-    </main>
+    </>
   )
 }
